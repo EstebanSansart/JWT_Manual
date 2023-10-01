@@ -1,8 +1,8 @@
 namespace ApiJWTManual.Dtos.Custom
 {
-    public class AuthRequest
+    public class RefreshTokenRequest
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string ExpiredToken { get; set; }
+        public string RefreshToken { get; set; }
     }
 }

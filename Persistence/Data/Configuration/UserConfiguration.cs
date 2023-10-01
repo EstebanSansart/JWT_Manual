@@ -9,7 +9,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder){
 
-        // Name table and define principal key
+        // Table name and define principal key
 
         builder.ToTable("user");
         builder.HasKey(x => x.Id);
