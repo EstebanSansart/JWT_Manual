@@ -3,7 +3,7 @@
 Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de como crear un JWT completamente funcional hecho de una forma no convencional; es decir, será hecho en Visual Studio Code y en un proyecto de 4 capas para mantener un mejor orden. Sin más que decir por ahora, aquí vamos.
 ## Requisitos
 
-Para poder realizar este proyecto, se va a necesitar que se tengan instalados los siguietnes programas y frameworks:
+Para poder realizar este proyecto, se va a necesitar que se tengan instalados los siguientes programas y frameworks:
 
 - Visual Studio Code
 - .NET 7.0
@@ -14,105 +14,105 @@ Para poder realizar este proyecto, se va a necesitar que se tengan instalados lo
 
 ## Índice
 
-1. Creación del proyecto de 4 capas
-
-1.1 Instalación del Batchfile
-
-1.2 Ejecuta el archivo
-
-1.3 Sigue los pasos del Batchfile
-
-2. Configuraciones generales
+1. [Creación del proyecto de 4 capas](#1-creación-del-proyecto-de-4-capas)
    
-2.1 Eliminar los "Nullable"
+   1.1 [Instalación del Batchfile](#11-instalación-del-batchfile)
 
-2.2 Agregar credenciales y llave
-
-3. Entidades y configuraciones
+   1.2 [Ejecuta el archivo](#12-ejecuta-el-archivo)
    
-3.1 Crear entidades
-
-3.1.1 BaseEntityA
-
-3.1.2 User
-
-3.2 Crear contexto
-
-3.3 Crear configuraciones
-
-4. Primera migración
+   1.3 [Sigue los pasos del Batchfile](#13-sigue-los-pasos-del-batchfile)
    
-4.1 Configurar "Program.cs"
-
-4.2 Realizar la migración
-
-5. Crear clases de autorización
+2. [Configuraciones generales](#2-configuraciones-generales)
    
-5.1 Clase "AuthRequest" (Solicitar Autorización)
-
-5.2 Clase "AuthResponse" (Respuesta de la Autorización)
-
-6. Crear los servicios
+   2.1 [Eliminar los "Nullable"](#21-eliminar-los-nullable)
    
-6.1 Crear "IAuthService" (Interfaz del servicio de autorización)
-
-6.2 Crear "AuthService" (Clase del servicio de autorización)
-
-6.2.1 GenerateToken()
-
-6.2.2 ReturnToken()
-
-7. Nuevas lineas a "Program.cs"
-
-8. Crear y testear controllers (controladores)
+   2.2 [Agregar credenciales y llave](#22-agregar-credenciales-y-llave)
    
-8.1 CountryController
-
-8.2 UserController
-
-8.2.1 Iniciar servidor
-
-8.2.2 Swagger
-
-8.2.3 Uso de una Plataforma API
-
-8.2.4 Obtener Token
-
-9. Implementar RefreshToken
+3. [Entidades y configuraciones](#3-entidades-y-configuraciones)
+   
+   3.1 [Crear entidades](#31-crear-entidades)
+   
+      3.1.1 [BaseEntityA](#311-baseentitya)
+   
+      3.1.2 [User](#312-user)
+   
+   3.2 [Crear contexto](#32-crear-contexto)
+   
+   3.3 [Crear configuraciones](#33-crear-configuraciones)
+   
+4. [Primera migración](#4-primera-migración)
+   
+   4.1 [Configurar "Program.cs"](#41-configurar-programcs)
+   
+   4.2 [Realizar la migración](#42-realizar-la-migración)
+   
+5. [Crear clases de autorización](#5-crear-clases-de-autorización)
     
-9.1 Nueva entidad y configuración
-
-9.1.1 RefreshTokenRecord
-
-9.1.2 Añadir al contexto
-
-9.1.3 RefreshTokenRecordConfiguration
-
-9.2 Modificar la clase "AuthResponse"
-
-9.3 Nueva clase en "Custom"
-
-9.4 Modificar la interfaz "IAuthService"
-
-9.5 Modificar la clase "AuthService"
-
-9.5.1 ReturnRefreshToken()
-
-9.5.2 GenerateRefreshToken()
-
-9.5.3 SaveRecordRefreshToken()
-
-9.5.4 Modificar el método "ReturnToken"
-
-9.5.5 Hacer la lógica de "ReturnRefreshToken"
-
-9.6 Actualizar "UserController"
-
-10. Testear el RefreshToken
+   5.1 [Clase "AuthRequest" (Solicitar Autorización)](#51-clase-authrequest-solicitar-autorización)
+   
+   5.2 [Clase "AuthResponse" (Respuesta de la Autorización)](#52-clase-authresponse-respuesta-de-la-autorización)
+   
+6. [Crear los servicios](#6-crear-los-servicios)
+   
+   6.1 [Crear "IAuthService" (Interfaz del servicio de autorización)](#61-crear-iauthservice-interfaz-del-servicio-de-autorización)
+   
+   6.2 [Crear "AuthService" (Clase del servicio de autorización)](#62-crear-authservice-clase-del-servicio-de-autorización)
+   
+      6.2.1 [GenerateToken()](#621-generatetoken)
+   
+      6.2.2 [ReturnToken()](#622-returntoken)
+   
+7. [Nuevas líneas en "Program.cs"](#7-nuevas-lineas-a-programcs)
     
-10.1 Nueva petición
-
-11. Guía de buenas practicas
+8. [Crear y probar controladores](#8-crear-y-testear-controllers-controladores)
+    
+   8.1 [CountryController](#81-countrycontroller)
+   
+   8.2 [UserController](#82-usercontroller)
+   
+      8.2.1 [Iniciar servidor](#821-iniciar-servidor)
+      
+      8.2.2 [Swagger](#822-swagger)
+   
+      8.2.3 [Uso de una Plataforma API](#823-uso-de-una-plataforma-api)
+   
+      8.2.4 [Obtener Token](#824-obtener-token)
+   
+9. [Implementar RefreshToken](#9-implementar-refreshtoken)
+    
+   9.1 [Nueva entidad y configuración](#91-nueva-entidad-y-configuración)
+   
+      9.1.1 [RefreshTokenRecord](#911-refreshtokenrecord)
+      
+      9.1.2 [Añadir al contexto](#912-añadir-al-contexto)
+      
+      9.1.3 [RefreshTokenRecordConfiguration](#913-refreshtokenrecordconfiguration)
+      
+   9.2 [Modificar la clase "AuthResponse"](#92-modificar-la-clase-authresponse)
+   
+   9.3 [Nueva clase en "Custom"](#93-nueva-clase-en-custom)
+   
+   9.4 [Modificar la interfaz "IAuthService"](#94-modificar-la-interfaz-iauthservice)
+   
+   9.5 [Modificar la clase "AuthService"](#95-modificar-la-clase-authservice)
+   
+      9.5.1 [ReturnRefreshToken()](#951-returnrefreshtoken)
+      
+      9.5.2 [GenerateRefreshToken()](#952-generaterefreshtoken)
+      
+      9.5.3 [SaveRecordRefreshToken()](#953-saverecordrefreshtoken)
+      
+      9.5.4 [Modificar el método "ReturnToken"](#954-modificar-el-método-returntoken)
+      
+      9.5.5 [Lógica de "ReturnRefreshToken"](#955-hacer-la-lógica-de-returnrefreshtoken)
+      
+   9.6 [Actualizar "UserController"](#96-actualizar-usercontroller)
+   
+10. [Probar el RefreshToken](#10-testear-el-refreshtoken)
+    
+   10.1 [Nueva petición](#101-nueva-petición)
+   
+11. [Guía de buenas prácticas](#11-guía-de-buenas-practicas)
 ## 1. Creación del proyecto de 4 capas
 
 Para facilitar la creación de este proyecto, usaremos un "Batchfile" por autoría del programador: [trainingLeader](https://github.com/trainingLeader).
