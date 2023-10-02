@@ -1,6 +1,17 @@
 # JWT Manual
 
 Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de como crear un JWT completamente funcional hecho de una forma no convencional; es decir, será hecho en Visual Studio Code y en un proyecto de 4 capas para mantener un mejor orden. Sin más que decir por ahora, aquí vamos.
+## Requisitos
+
+Para poder realizar este proyecto, se va a necesitar que se tengan instalados los siguietnes programas y frameworks:
+
+- Visual Studio Code
+- .NET 7.0
+- EntityFramework 7
+- MySQL 8
+- API Client (Postman, Insomnia, Thunder Client)
+- NuGet
+
 ## Índice
 
 1. Creación del proyecto de 4 capas
