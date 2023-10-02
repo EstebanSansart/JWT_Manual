@@ -5,53 +5,93 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 
 1. Creación del proyecto de 4 capas
 1.1 Instalación del Batchfile
+
 1.2 Ejecuta el archivo
+
 1.3 Sigue los pasos del Batchfile
+
 2. Configuraciones generales
 2.1 Eliminar los "Nullable"
+
 2.2 Agregar credenciales y llave
+
 3. Entidades y configuraciones
 3.1 Crear entidades
+
 3.1.1 BaseEntityA
+
 3.1.2 User
+
 3.2 Crear contexto
+
 3.3 Crear configuraciones
+
 4. Primera migración
 4.1 Configurar "Program.cs"
+
 4.2 Realizar la migración
+
 5. Crear clases de autorización
 5.1 Clase "AuthRequest" (Solicitar Autorización)
+
 5.2 Clase "AuthResponse" (Respuesta de la Autorización)
+
 6. Crear los servicios
 6.1 Crear "IAuthService" (Interfaz del servicio de autorización)
+
 6.2 Crear "AuthService" (Clase del servicio de autorización)
+
 6.2.1 GenerateToken()
+
 6.2.2 ReturnToken()
+
 7. Nuevas lineas a "Program.cs"
+
 8. Crear y testear controllers (controladores)
 8.1 CountryController
+
 8.2 UserController
+
 8.2.1 Iniciar servidor
+
 8.2.2 Swagger
+
 8.2.3 Uso de una Plataforma API
+
 8.2.4 Obtener Token
+
 9. Implementar RefreshToken
 9.1 Nueva entidad y configuración
+
 9.1.1 RefreshTokenRecord
+
 9.1.2 Añadir al contexto
+
 9.1.3 RefreshTokenRecordConfiguration
+
 9.2 Modificar la clase "AuthResponse"
+
 9.3 Nueva clase en "Custom"
+
 9.4 Modificar la interfaz "IAuthService"
+
 9.5 Modificar la clase "AuthService"
+
 9.5.1 ReturnRefreshToken()
+
 9.5.2 GenerateRefreshToken()
+
 9.5.3 SaveRecordRefreshToken()
+
 9.5.4 Modificar el método "ReturnToken"
+
 9.5.5 Hacer la lógica de "ReturnRefreshToken"
+
 9.6 Actualizar "UserController"
+
 10. Testear el RefreshToken
 10.1 Nueva petición
+
 11. Guía de buenas practicas
 ## 1. Creación del proyecto de 4 capas
 
