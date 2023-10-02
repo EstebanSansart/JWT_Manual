@@ -1020,20 +1020,20 @@ Ya finalizado el proyecto, hablemos un poco de las buenas practicas que se puede
 - Orden de los nombres: En este caso, por ejemplo, al momento de definir un Id se hace lo siguiente: "UserId" pero al momento de definir otro se le nombra como "Id_Provider". La idea es que todos comiencen con la palabra "Id" y luego se haga la adición del nombre específico de este Id o viceversa, pero que sea un orden para todos.
 - Identar donde se debe identar: Aquí quiero dar a entender que hay veces en las que se debe identar para mantener una vista más ordenada del código. Por ejemplo:
 
-    "objeto1" = {
-        "nombre1" = {
-            "nombre2" : "valor2",
-            "nombre3" : "valor3"
-        }
-    },
-    "objeto2" = {
-        "nombre4" = {
-            "nombre5" : "valor5",
-            "nombre6" : "valor6",
-            "nombre7" : "valor7
+        "objeto1" = {
+            "nombre1" = {
+                "nombre2" : "valor2",
+                "nombre3" : "valor3"
+            }
         },
-        "nombre8" = {}
-    }
+        "objeto2" = {
+            "nombre4" = {
+                "nombre5" : "valor5",
+                "nombre6" : "valor6",
+                "nombre7" : "valor7
+            },
+            "nombre8" = {}
+        }
 
 ## Author
 
