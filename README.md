@@ -4,6 +4,7 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 ## Índice
 
 1. Creación del proyecto de 4 capas
+
 1.1 Instalación del Batchfile
 
 1.2 Ejecuta el archivo
@@ -11,11 +12,13 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 1.3 Sigue los pasos del Batchfile
 
 2. Configuraciones generales
+   
 2.1 Eliminar los "Nullable"
 
 2.2 Agregar credenciales y llave
 
 3. Entidades y configuraciones
+   
 3.1 Crear entidades
 
 3.1.1 BaseEntityA
@@ -27,16 +30,19 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 3.3 Crear configuraciones
 
 4. Primera migración
+   
 4.1 Configurar "Program.cs"
 
 4.2 Realizar la migración
 
 5. Crear clases de autorización
+   
 5.1 Clase "AuthRequest" (Solicitar Autorización)
 
 5.2 Clase "AuthResponse" (Respuesta de la Autorización)
 
 6. Crear los servicios
+   
 6.1 Crear "IAuthService" (Interfaz del servicio de autorización)
 
 6.2 Crear "AuthService" (Clase del servicio de autorización)
@@ -48,6 +54,7 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 7. Nuevas lineas a "Program.cs"
 
 8. Crear y testear controllers (controladores)
+   
 8.1 CountryController
 
 8.2 UserController
@@ -61,6 +68,7 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 8.2.4 Obtener Token
 
 9. Implementar RefreshToken
+    
 9.1 Nueva entidad y configuración
 
 9.1.1 RefreshTokenRecord
@@ -90,6 +98,7 @@ Bienvenido al manual de JSON Web Token, donde se va a enseñar un paso a paso de
 9.6 Actualizar "UserController"
 
 10. Testear el RefreshToken
+    
 10.1 Nueva petición
 
 11. Guía de buenas practicas
