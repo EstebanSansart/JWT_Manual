@@ -13,7 +13,7 @@ namespace ApiJWTManual.Controllers
         [HttpGet]
         [Route("Lista")]
         public async Task<IActionResult> Lista(){
-            var countryList = await Task.FromResult(new List<string>{"Francia","Argentina","Croacia","Marruecos"});
+            var countryList = await Task.FromResult(new List<string>{"Japan","Norway","Netherlands","Switzerland"});
             return Ok(countryList); 
         }
     }

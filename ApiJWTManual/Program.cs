@@ -12,10 +12,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-// Add Configurations
-
-
-
 // Add SQL Connection
 builder.Services.AddDbContext<ApiJWTManualContext>(opts =>{
     string connection = builder.Configuration["ConnectionStrings:MainConnection"]?? throw new Exception("Error: Invalid Connection");
